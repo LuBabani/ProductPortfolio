@@ -44,7 +44,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 1.2rem 3rem;
   display: flex; justify-content: space-between; align-items: center;
-  background: rgba(253,250,247,0.85);
+  background:  var(--mint-light);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--lavender-light);
   transition: all 0.3s;
@@ -56,7 +56,7 @@ nav {
   font-style: italic;
 }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a {
+.-links a {
   font-size: 0.85rem; letter-spacing: 0.08em; color: var(--text-mid);
   text-decoration: none; text-transform: uppercase; font-weight: 500;
   transition: color 0.2s;
@@ -1312,7 +1312,7 @@ startGame();
 /* ── NAV SCROLL ── */
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('mainNav');
-  nav.style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(230, 249, 243, 1)' : 'none';
+  nav.style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(253,250,247,0.85)' : 'none';
 });
 </script>
 </body>
