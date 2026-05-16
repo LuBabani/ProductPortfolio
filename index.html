@@ -51,7 +51,7 @@ nav {
 }
 .nav-logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; color: var(--lavender-dark);
+  font-size: 1.5rem; color: var();
   font-style: italic;
 }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -60,7 +60,7 @@ nav {
   text-decoration: none; text-transform: uppercase; font-weight: 500;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--lavender-dark); }
+.nav-links a:hover { color: var(); }
 .nav-cta {
   background: var(--lavender-dark); color: white;
   padding: 0.6rem 1.4rem; border-radius: 100px;
@@ -1103,25 +1103,30 @@ footer a:hover { color: white; }
             ✉️ LuoBabani@gmail.com
           </a>
           <a href="https://www.linkedin.com/in/lubabani/" target="_blank" style="
-            background: transparent; color: white;
-            padding: 0.9rem 2rem; border-radius: 100px;
+            background: linear-gradient(135deg, var(--lavender-dark), var(--lavender-deep));
+            color: white; padding: 0.9rem 2rem; border-radius: 100px;
             font-size: 0.9rem; font-weight: 500; text-decoration: none;
-            border: 1.5px solid rgba(255,255,255,0.2);
             display: inline-flex; align-items: center; gap: 0.5rem;
             transition: all 0.2s;
-          " onmouseover="this.style.borderColor='var(--lavender)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.transform='none'">
+          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
             💼 Connect on LinkedIn
           </a>
         <!-- WORLD EXPERIENCE CHIPS -->
-        <div style="margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:0.6rem;">
-          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:0.4rem 1rem;font-size:0.78rem;color:rgba(255,255,255,0.6);">🇧🇷 Brazil — home base</div>
-          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:0.4rem 1rem;font-size:0.78rem;color:rgba(255,255,255,0.6);">🇨🇳 China — 10 years</div>
-          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:0.4rem 1rem;font-size:0.78rem;color:rgba(255,255,255,0.6);">🇮🇳 India — now</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Open to Relocation</span>
+          <span class="skill-pill mint">Open to International Opportunities</span>
+          <span class="skill-pill">Hybrid or On-site Friendly</span>
+          <span class="skill-pill mint">Remote Collaboration</span>
+          <span class="skill-pill">Travel Available</span>
+          <span class="skill-pill mint">Cross-functional Team Leadership</span>
+          <span class="skill-pill">Global Team Experience</span>
+          <span class="skill-pill mint">Fast-paced Environments</span>
+          <span class="skill-pill">Startup & Enterprise Experience</span>
+          <span class="skill-pill mint">Async Communication</span>
+          <span class="skill-pill">Multicultural Collaboration</span>
+          <span class="skill-pill mint">English Fluent</span>
         </div>
         </div>
-         <div>
-        <p class="section-sub reveal" style="margin-bottom:3rem;">Open for relocation.</p>
-         </div>
       </div>
 
       <!-- RIGHT: LOCATION CARD -->
@@ -1223,12 +1228,7 @@ footer a:hover { color: white; }
                 <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:0.3rem;">Open to</div>
                 <div style="font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.6;">Remote · Hybrid<br>Relocation welcome ✈️</div>
               </div>
-
-              <div>
-                <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:0.3rem;">Currently at</div>
-                <div style="font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.6;">CDK Global<br>Senior PM</div>
-              </div>
-
+              
             </div>
           </div>
 
@@ -1445,7 +1445,7 @@ startGame();
 /* ── NAV SCROLL ── */
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('mainNav');
-  nav.style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(140,120,200,0.1)' : 'none';
+  nav.style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(230,230,250,1.0)' : 'none';
 });
 </script>
 </body>
