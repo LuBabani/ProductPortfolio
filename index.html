@@ -431,11 +431,11 @@ section { padding: 6rem 2rem; }
 .btn-restart:hover { background: var(--lavender-deep); transform: translateY(-2px); }
 
 /* ── CONTACT ── */
-#contact { background: var(--text-dark); color: white; }
-#contact .section-label { color: var(--mint-deep); }
-#contact .section-label::before { background: var(--mint-deep); }
-#contact .section-title { color: white; }
-#contact .section-title em { color: var(--lavender); }
+#contact { background: var(--lavender-deep); color: white; }
+#contact .section-label { color: var(--lavender-pale); }
+#contact .section-label::before { background: var(--lavender-deep); }
+#contact .section-title { color: mint-deep; }
+#contact .section-title em { color: var(--mint-dark); }
 .contact-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
   margin-top: 3.5rem;
@@ -1101,14 +1101,7 @@ footer a:hover { color: white; }
           " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
             💼 Connect on LinkedIn
           </a>
-        <!-- WORLD EXPERIENCE CHIPS -->
-        <div class="skill-pills">
-          <span class="skill-pill">Open to Relocation</span>
-          <span class="skill-pill">Open to International Opportunities</span>
-          <span class="skill-pill">Hybrid or On-site Friendly</span>
-          <span class="skill-pill">Remote Collaboration</span>
-          <span class="skill-pill">Travel Available</span>
-        </div>
+       
         </div>
       </div>
 
@@ -1116,105 +1109,13 @@ footer a:hover { color: white; }
       <div class="reveal reveal-delay-1">
         <div class="section-label" style="margin-bottom:1.5rem;">Currently based in</div>
 
-        <div style="
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.12);
-          border-radius: 24px; overflow: hidden;
-        ">
-
-          <!-- MAP VISUAL -->
-          <div style="
-            position: relative; height: 220px; overflow: hidden;
-            background: linear-gradient(160deg, #1a1040 0%, #2a1f5c 40%, #1a2e40 100%);
-          ">
-            <!-- Grid lines -->
-            <svg width="100%" height="100%" style="position:absolute;inset:0;opacity:0.15;">
-              <defs>
-                <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                  <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#C9C0E8" stroke-width="0.5"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid)"/>
-            </svg>
-
-            <!-- India shape (simplified SVG outline) -->
-            <svg viewBox="0 0 200 220" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);width:180px;height:200px;opacity:0.5;">
-              <path d="M 85 10 C 75 12 60 15 55 25 C 50 35 58 40 55 50
-                        C 52 60 40 65 38 75 C 35 88 42 95 40 105
-                        C 38 112 30 118 32 130 C 34 140 45 148 50 158
-                        C 58 172 65 185 70 195 C 75 205 80 215 82 218
-                        C 84 215 88 205 92 196 C 96 186 100 175 108 164
-                        C 115 152 128 148 132 138 C 137 126 130 116 132 106
-                        C 134 96 142 90 142 80 C 142 68 132 62 130 52
-                        C 128 42 136 36 133 26 C 130 16 115 12 100 10 Z"
-                    fill="none" stroke="#C9C0E8" stroke-width="1.5"/>
-            </svg>
-
-            <!-- Glowing pulse dot for Hyderabad -->
-            <div style="position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);">
-              <!-- Pulse rings -->
-              <div style="
-                position:absolute; border-radius:50%;
-                background: rgba(109,202,176,0.15);
-                width:60px; height:60px;
-                top:50%; left:50%; transform:translate(-50%,-50%);
-                animation: pulse-ring 2s ease-out infinite;
-              "></div>
-              <div style="
-                position:absolute; border-radius:50%;
-                background: rgba(109,202,176,0.1);
-                width:40px; height:40px;
-                top:50%; left:50%; transform:translate(-50%,-50%);
-                animation: pulse-ring 2s 0.5s ease-out infinite;
-              "></div>
-              <!-- Dot -->
-              <div style="
-                width:14px; height:14px; border-radius:50%;
-                background: var(--mint-deep);
-                border: 2px solid white;
-                box-shadow: 0 0 12px var(--mint-deep);
-                position:relative; z-index:2;
-              "></div>
-            </div>
-
-            <!-- Stars -->
-            <div style="position:absolute;inset:0;pointer-events:none;">
-              <div style="position:absolute;width:2px;height:2px;background:white;border-radius:50%;top:15%;left:20%;opacity:0.6;"></div>
-              <div style="position:absolute;width:1px;height:1px;background:white;border-radius:50%;top:25%;left:80%;opacity:0.5;"></div>
-              <div style="position:absolute;width:2px;height:2px;background:white;border-radius:50%;top:10%;left:65%;opacity:0.7;"></div>
-              <div style="position:absolute;width:1px;height:1px;background:white;border-radius:50%;top:70%;left:15%;opacity:0.4;"></div>
-              <div style="position:absolute;width:2px;height:2px;background:white;border-radius:50%;top:80%;left:85%;opacity:0.6;"></div>
-              <div style="position:absolute;width:1px;height:1px;background:white;border-radius:50%;top:40%;left:10%;opacity:0.5;"></div>
-            </div>
-
-            <!-- Label -->
-            <div style="
-              position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
-              background: rgba(109,202,176,0.2); border: 1px solid rgba(109,202,176,0.4);
-              backdrop-filter: blur(8px); border-radius: 100px;
-              padding: 0.3rem 1rem; font-size: 0.75rem; color: var(--mint-deep);
-              white-space: nowrap; font-weight: 500; letter-spacing: 0.05em;
-            ">📍 Hyderabad, India</div>
-          </div>
-
-          <!-- INFO BELOW MAP -->
-          <div style="padding: 1.5rem 1.8rem;">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
-
-              <div>
-                <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:0.3rem;">Location</div>
-                <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:white;">Hyderabad, India 🇮🇳</div>
-                <div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:0.2rem;">IST · UTC+5:30</div>
-              </div>
-
-              <div>
-                <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:0.3rem;">Open to</div>
-                <div style="font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.6;">Remote · Hybrid<br>Relocation welcome ✈️</div>
-              </div>
-              
-            </div>
-          </div>
-
+     <!-- OPTIONS CHIPS -->
+        <div class="skill-pills">
+          <span class="skill-pill">Open to Relocation</span>
+          <span class="skill-pill">Open to International Opportunities</span>
+          <span class="skill-pill">Hybrid or On-site Friendly</span>
+          <span class="skill-pill">Remote Collaboration</span>
+          <span class="skill-pill">Travel Available</span>
         </div>
       </div>
     </div>
