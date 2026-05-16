@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lu Babani — AI Digital Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --lavender: #C9C0E8;
+  --lavender-light: #EDE9F8;
+  --lavender-pale: #F7F5FD;
+  --lavender-deep: #8B7CC8;
+  --lavender-dark: #5A4B9A;
+  --mint: #B8E6D8;
+  --mint-light: #E4F7F1;
+  --mint-pale: #F2FBF8;
+  --mint-deep: #6DCAB0;
+  --mint-dark: #3A9B82;
+  --blush: #F5D8E8;
+  --blush-deep: #E8A0C0;
+  --cream: #FDFAF7;
+  --text-dark: #2D2640;
+  --text-mid: #6B6080;
+  --text-light: #A89FBD;
+  --white: #FFFFFF;
+  --shadow: rgba(140,120,200,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.2rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(253,250,247,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--lavender-light);
+  transition: all 0.3s;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; color: var(--lavender-dark);
+  font-style: italic;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem; letter-spacing: 0.08em; color: var(--text-mid);
+  text-decoration: none; text-transform: uppercase; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--lavender-dark); }
+.nav-cta {
+  background: var(--lavender-dark); color: white;
+  padding: 0.6rem 1.4rem; border-radius: 100px;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em;
+  text-decoration: none; transition: all 0.2s;
+  border: none; cursor: pointer;
+}
+.nav-cta:hover { background: var(--lavender-deep); transform: translateY(-1px); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  background: linear-gradient(160deg, var(--lavender-pale) 0%, var(--cream) 50%, var(--mint-pale) 100%);
+  position: relative; overflow: hidden;
+}
+
+.hero-blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(60px); pointer-events: none; animation: float 8s ease-in-out infinite;
+}
+.blob1 { width: 420px; height: 420px; background: rgba(201,192,232,0.35); top: -80px; right: -100px; animation-delay: 0s; }
+.blob2 { width: 300px; height: 300px; background: rgba(184,230,216,0.3); bottom: 50px; left: -80px; animation-delay: 3s; }
+.blob3 { width: 200px; height: 200px; background: rgba(245,216,232,0.4); top: 40%; left: 30%; animation-delay: 1.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.04); }
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--lavender-light);
+  color: var(--lavender-dark);
+  font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500;
+  padding: 0.5rem 1.4rem; border-radius: 100px;
+  margin-bottom: 1.8rem;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 400; line-height: 1.05;
+  color: var(--text-dark); margin-bottom: 0.3rem;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+.hero-name em { font-style: italic; color: var(--lavender-dark); }
+.hero-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 300; font-style: italic;
+  color: var(--text-mid); margin-bottom: 2.2rem;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+.hero-desc {
+  max-width: 600px; font-size: 1.05rem; line-height: 1.75;
+  color: var(--text-mid); margin-bottom: 2.8rem;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+.hero-desc strong { color: var(--lavender-dark); font-weight: 500; }
+
+.hero-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+.btn-primary {
+  background: var(--lavender-dark); color: white;
+  padding: 0.85rem 2rem; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 500; text-decoration: none;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary:hover { background: var(--lavender-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(90,75,154,0.25); }
+.btn-secondary {
+  background: transparent; color: var(--text-dark);
+  padding: 0.85rem 2rem; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 500; text-decoration: none;
+  border: 1.5px solid var(--lavender);
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-secondary:hover { border-color: var(--lavender-dark); color: var(--lavender-dark); transform: translateY(-2px); }
+
+.hero-stats {
+  display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;
+  margin-top: 4rem; animation: fadeUp 0.7s 0.5s ease both;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 600;
+  color: var(--lavender-dark); display: block; line-height: 1;
+}
+.stat-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin-top: 0.4rem; }
+
+.hero-photo {
+  width: 160px; height: 160px; border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  border: 4px solid white;
+  box-shadow: 0 0 0 8px var(--lavender-light), 0 16px 40px var(--shadow);
+  margin-bottom: 2rem;
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SECTIONS ── */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+
+.section-label {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--mint-dark); font-weight: 500; margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.section-label::before { content: ''; display: block; width: 28px; height: 1.5px; background: var(--mint-dark); }
+
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400; line-height: 1.2; margin-bottom: 1rem; color: var(--text-dark);
+}
+.section-title em { font-style: italic; color: var(--lavender-dark); }
+.section-sub { font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; max-width: 560px; }
+
+/* ── ABOUT ── */
+#about { background: var(--white); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+  margin-top: 3.5rem;
+}
+@media(max-width:768px){ .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+.about-text p { font-size: 1rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 1.2rem; }
+.about-text p strong { color: var(--text-dark); font-weight: 500; }
+.about-highlights { display: flex; flex-direction: column; gap: 1.2rem; }
+.highlight-card {
+  background: var(--lavender-pale); border: 1px solid var(--lavender-light);
+  border-radius: 16px; padding: 1.4rem 1.6rem;
+  display: flex; gap: 1rem; align-items: flex-start;
+  transition: all 0.25s;
+}
+.highlight-card:hover { border-color: var(--lavender); transform: translateX(4px); }
+.highlight-icon {
+  width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+  background: var(--lavender-light); display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.highlight-card h4 { font-size: 0.9rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.25rem; }
+.highlight-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.5; }
+
+/* ── EXPERIENCE TIMELINE ── */
+#experience { background: var(--lavender-pale); }
+.timeline { margin-top: 3.5rem; display: flex; flex-direction: column; gap: 0; }
+.timeline-item {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 2.5rem; position: relative; padding-bottom: 3rem;
+}
+.timeline-item::after {
+  content: ''; position: absolute;
+  left: 207px; top: 12px; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, var(--lavender), transparent);
+}
+.timeline-item:last-child::after { display: none; }
+@media(max-width:768px){ .timeline-item { grid-template-columns: 1fr; } .timeline-item::after { display: none; } }
+.timeline-date {
+  text-align: right; padding-top: 0.2rem;
+}
+.timeline-date span {
+  font-size: 0.8rem; color: var(--lavender-dark); font-weight: 500;
+  letter-spacing: 0.05em; background: var(--lavender-light); padding: 0.3rem 0.8rem; border-radius: 100px;
+  display: inline-block;
+}
+.timeline-dot {
+  position: absolute; left: 203px; top: 10px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--lavender-dark); border: 2px solid white;
+  box-shadow: 0 0 0 3px var(--lavender);
+}
+@media(max-width:768px){ .timeline-dot { display: none; } }
+.timeline-content {
+  background: white; border-radius: 20px;
+  padding: 1.8rem 2rem; border: 1px solid var(--lavender-light);
+  transition: all 0.25s;
+}
+.timeline-content:hover { box-shadow: 0 8px 30px var(--shadow); transform: translateY(-2px); }
+.timeline-company {
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--mint-dark); font-weight: 500; margin-bottom: 0.3rem;
+}
+.timeline-role {
+  font-family: 'Playfair Display', serif; font-size: 1.3rem;
+  font-weight: 400; color: var(--text-dark); margin-bottom: 0.5rem;
+}
+.timeline-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; }
+.timeline-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 100px;
+  background: var(--mint-light); color: var(--mint-dark); font-weight: 500;
+}
+.tag.lav { background: var(--lavender-light); color: var(--lavender-dark); }
+
+/* ── PROJECTS ── */
+#projects { background: var(--white); }
+.projects-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem; margin-top: 3.5rem;
+}
+.project-card {
+  border-radius: 24px; overflow: hidden;
+  border: 1px solid var(--lavender-light); background: white;
+  transition: all 0.3s; cursor: pointer; position: relative;
+}
+.project-card:hover { box-shadow: 0 16px 40px var(--shadow); transform: translateY(-4px); }
+.project-header {
+  padding: 2rem 2rem 1rem; position: relative;
+}
+.project-emoji { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+.project-num {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300;
+  color: var(--lavender-light); line-height: 1;
+}
+.project-cat {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--mint-dark); font-weight: 500; margin-bottom: 0.5rem;
+}
+.project-title {
+  font-family: 'Playfair Display', serif; font-size: 1.4rem;
+  font-weight: 400; margin-bottom: 0.8rem;
+}
+.project-desc { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+.project-metrics {
+  display: flex; gap: 0; border-top: 1px solid var(--lavender-light);
+}
+.metric-box {
+  flex: 1; padding: 1rem 1.2rem; text-align: center;
+  border-right: 1px solid var(--lavender-light);
+}
+.metric-box:last-child { border-right: none; }
+.metric-val {
+  font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600;
+  color: var(--lavender-dark); display: block;
+}
+.metric-lbl { font-size: 0.7rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
+.project-body { padding: 0 2rem 1.5rem; }
+
+/* ── SKILLS ── */
+#skills { background: var(--mint-pale); }
+.skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3.5rem; }
+@media(max-width:768px){ .skills-layout { grid-template-columns: 1fr; } }
+.skills-col h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.2rem;
+  font-weight: 400; margin-bottom: 1.5rem; color: var(--text-dark);
+  border-bottom: 1px solid var(--mint); padding-bottom: 0.8rem;
+}
+.skill-bar { margin-bottom: 1.2rem; }
+.skill-bar-header { display: flex; justify-content: space-between; margin-bottom: 0.4rem; }
+.skill-name { font-size: 0.88rem; font-weight: 500; color: var(--text-dark); }
+.skill-pct { font-size: 0.8rem; color: var(--text-light); }
+.skill-track { height: 6px; background: var(--lavender-light); border-radius: 100px; overflow: hidden; }
+.skill-fill {
+  height: 100%; border-radius: 100px;
+  background: linear-gradient(90deg, var(--lavender-deep), var(--mint-deep));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+.skill-fill.animate { transform: scaleX(1); }
+.skill-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.skill-pill {
+  padding: 0.45rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 500;
+  background: var(--lavender-light); color: var(--lavender-dark); border: 1px solid var(--lavender);
+  transition: all 0.2s;
+}
+.skill-pill:hover { background: var(--lavender-dark); color: white; }
+.skill-pill.mint { background: var(--mint-light); color: var(--mint-dark); border-color: var(--mint); }
+.skill-pill.mint:hover { background: var(--mint-dark); color: white; }
+
+/* ── LANGUAGE ── */
+.lang-chips { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.lang-chip {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: white; border: 1px solid var(--lavender-light); border-radius: 100px;
+  padding: 0.5rem 1.2rem; font-size: 0.85rem;
+}
+.lang-flag { font-size: 1.2rem; }
+.lang-lv { font-size: 0.7rem; color: var(--text-light); margin-left: 0.3rem; }
+
+/* ── EDUCATION ── */
+#education { background: white; }
+.edu-card {
+  background: var(--lavender-pale); border: 1px solid var(--lavender-light);
+  border-radius: 24px; padding: 2.4rem; display: flex; gap: 2rem; align-items: flex-start;
+  margin-top: 2rem; transition: all 0.25s;
+}
+.edu-card:hover { box-shadow: 0 8px 30px var(--shadow); }
+.edu-icon {
+  width: 56px; height: 56px; flex-shrink: 0; border-radius: 16px;
+  background: var(--lavender-dark); display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+}
+.edu-info h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.3rem; }
+.edu-info .school { font-size: 0.85rem; color: var(--lavender-dark); font-weight: 500; margin-bottom: 0.2rem; }
+.edu-info .period { font-size: 0.8rem; color: var(--text-light); }
+.edu-gpa { margin-top: 0.8rem; display: flex; align-items: center; gap: 0.8rem; }
+.gpa-badge {
+  background: var(--mint-light); color: var(--mint-dark); border-radius: 100px;
+  font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.8rem; letter-spacing: 0.05em;
+}
+
+/* ── GAME SECTION ── */
+#game { background: linear-gradient(135deg, var(--lavender-pale), var(--mint-pale)); }
+.game-wrapper {
+  max-width: 720px; margin: 3rem auto 0;
+  background: white; border-radius: 32px; overflow: hidden;
+  border: 1px solid var(--lavender-light);
+  box-shadow: 0 20px 60px rgba(140,120,200,0.15);
+}
+.game-top {
+  background: linear-gradient(135deg, var(--lavender-dark), var(--lavender-deep));
+  padding: 2.5rem; color: white; text-align: center;
+}
+.game-top h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem; }
+.game-top p { font-size: 0.9rem; opacity: 0.85; }
+.game-body { padding: 2.5rem; }
+.game-progress {
+  display: flex; gap: 0.4rem; margin-bottom: 2rem; justify-content: center;
+}
+.progress-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--lavender-light); transition: all 0.3s;
+}
+.progress-dot.done { background: var(--lavender-dark); }
+.progress-dot.current { background: var(--mint-dark); transform: scale(1.3); }
+.game-question {
+  font-family: 'Playfair Display', serif; font-size: 1.3rem; text-align: center;
+  margin-bottom: 2rem; color: var(--text-dark); min-height: 60px;
+  display: flex; align-items: center; justify-content: center;
+}
+.game-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1.5rem; }
+.game-option {
+  padding: 1rem 1.2rem; border-radius: 14px; border: 1.5px solid var(--lavender-light);
+  background: var(--lavender-pale); cursor: pointer; text-align: center;
+  font-size: 0.9rem; font-weight: 500; color: var(--text-dark);
+  transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+}
+.game-option:hover { border-color: var(--lavender-dark); background: var(--lavender-light); transform: translateY(-2px); }
+.game-option.correct { border-color: var(--mint-dark); background: var(--mint-light); color: var(--mint-dark); }
+.game-option.wrong { border-color: #E8A0A0; background: #FEF0F0; color: #C05050; }
+.game-feedback {
+  text-align: center; font-size: 0.9rem; color: var(--text-mid);
+  min-height: 40px; display: flex; align-items: center; justify-content: center;
+  line-height: 1.5; font-style: italic;
+}
+.game-score-display {
+  text-align: center; padding: 1.5rem;
+  border-top: 1px solid var(--lavender-light); margin-top: 1rem;
+}
+.game-score { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--lavender-dark); }
+.score-msg { font-size: 0.95rem; color: var(--text-mid); margin-top: 0.5rem; line-height: 1.6; }
+.btn-restart {
+  margin-top: 1.2rem; background: var(--lavender-dark); color: white;
+  border: none; padding: 0.8rem 2rem; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 500; cursor: pointer;
+  transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+}
+.btn-restart:hover { background: var(--lavender-deep); transform: translateY(-2px); }
+
+/* ── CONTACT ── */
+#contact { background: var(--text-dark); color: white; }
+#contact .section-label { color: var(--mint-deep); }
+#contact .section-label::before { background: var(--mint-deep); }
+#contact .section-title { color: white; }
+#contact .section-title em { color: var(--lavender); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  margin-top: 3.5rem;
+}
+@media(max-width:768px){ .contact-grid { grid-template-columns: 1fr; } }
+.contact-info p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.75; margin-bottom: 2rem; }
+.contact-links { display: flex; flex-direction: column; gap: 1rem; }
+.contact-link {
+  display: flex; align-items: center; gap: 1rem;
+  color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem;
+  padding: 0.8rem 1.2rem; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1); transition: all 0.2s;
+}
+.contact-link:hover { background: rgba(255,255,255,0.06); color: white; border-color: var(--lavender); }
+.contact-link-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: rgba(201,192,232,0.15); display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; text-transform: uppercase; }
+.form-group input, .form-group textarea {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px; padding: 0.9rem 1.2rem; color: white; font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem; transition: border 0.2s; outline: none; resize: vertical;
+}
+.form-group input:focus, .form-group textarea:focus { border-color: var(--lavender); }
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+.form-submit {
+  background: linear-gradient(135deg, var(--lavender-dark), var(--lavender-deep));
+  color: white; border: none; padding: 0.9rem 2rem; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 500; cursor: pointer;
+  transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+  align-self: flex-start;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(139,124,200,0.4); }
+.form-note { font-size: 0.78rem; color: rgba(255,255,255,0.3); font-style: italic; }
+
+/* ── FOOTER ── */
+footer {
+  background: #1E1A2E; padding: 2rem; text-align: center;
+  font-size: 0.82rem; color: rgba(255,255,255,0.3);
+}
+footer a { color: var(--lavender); text-decoration: none; }
+footer a:hover { color: white; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ── RESPONSIVE NAV ── */
+@media(max-width:768px){
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero-stats { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <span class="nav-logo">Lu Babani</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#game">Quiz</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Let's talk ✦</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-blob blob3"></div>
+
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Ccircle cx='80' cy='80' r='80' fill='%23EDE9F8'/%3E%3C/svg%3E" alt="Lu Babani" class="hero-photo" id="heroPhoto">
+  <div class="hero-tag">✦ AI Digital Product Manager</div>
+  <h1 class="hero-name">Lu <em>Babani</em></h1>
+  <p class="hero-role">15 years · 3 continents · 1,000+ products built</p>
+  <p class="hero-desc">
+    I applied <strong>product thinking to my own job search</strong> — so instead of a resume, you get a portfolio designed to respect your time and make a decision easier.
+  </p>
+  <div class="hero-actions">
+    <a href="#projects" class="btn-primary">View my work →</a>
+    <a href="https://www.linkedin.com/in/lubabani/" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item"><span class="stat-num">15+</span><div class="stat-label">Years Experience</div></div>
+    <div class="stat-item"><span class="stat-num">1k+</span><div class="stat-label">Products Built</div></div>
+    <div class="stat-item"><span class="stat-num">4</span><div class="stat-label">Languages</div></div>
+    <div class="stat-item"><span class="stat-num">3</span><div class="stat-label">Continents</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Who I am</div>
+    <h2 class="section-title">Product-brained,<br><em>people-first</em></h2>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>Hello, I am Lucy. ✨ I am a <strong>Senior Product Manager with 15 years of experience</strong> building and scaling both digital products and physical hardware devices — from 0→1 and from 1→n.</p>
+        <p>I specialize in end-to-end ownership: discovery to delivery, leading cross-functional and multiregion teams. With a multidisciplinary background, I work closely with engineering while aligning with business strategy. I communicate at all levels to ensure clarity and alignment.</p>
+        <p>I <strong>spent nearly a decade in China</strong> building products for global markets, leading multinational teams, and scaling operations across borders — leading the development of 1,000+ products for clients worldwide.</p>
+        <p>During COVID-19, I leaned fully into technology — earning a <strong>Bachelor's degree in Software Engineering</strong> while working full-time on critical healthcare technology products. Currently based in <strong>Hyderabad, India</strong>, leading enterprise modernization at CDK Global.</p>
+        <div class="lang-chips" style="margin-top:1.5rem;">
+          <div class="lang-chip"><span class="lang-flag">🇧🇷</span> Portuguese <span class="lang-lv">Native</span></div>
+          <div class="lang-chip"><span class="lang-flag">🇺🇸</span> English <span class="lang-lv">Fluent</span></div>
+          <div class="lang-chip"><span class="lang-flag">🇪🇸</span> Spanish <span class="lang-lv">Fluent</span></div>
+          <div class="lang-chip"><span class="lang-flag">🇩🇪</span> German <span class="lang-lv">B1</span></div>
+        </div>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">🇨🇳</div>
+          <div>
+            <h4>A decade in China</h4>
+            <p>Built 1,000+ products for global markets, led multinational teams, scaled operations across borders at I-Deal China.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🏥</div>
+          <div>
+            <h4>Healthtech under pressure</h4>
+            <p>Delivered critical MedTech solutions during COVID-19 — full lab automation + patient portal — while studying Software Engineering full-time.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🇮🇳</div>
+          <div>
+            <h4>Enterprise modernization in India</h4>
+            <p>At CDK Global Hyderabad, leading large-scale DMS accounting product transformation at the intersection of strategy and engineering.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🎓</div>
+          <div>
+            <h4>Software Engineering degree</h4>
+            <p>UCSAL — Universidade Católica do Salvador. GPA 9.14 / 10. Graduated 2024.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label reveal">Career journey</div>
+    <h2 class="section-title reveal">Where I've <em>built things</em></h2>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date"><span>2024 → Now</span></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">CDK Global · Hyderabad, India</div>
+          <div class="timeline-role">Senior Product Manager — DMS Accounting</div>
+          <div class="timeline-desc">Leading enterprise modernization of the Dealer Management System accounting product. Translating ambiguous executive vision into clear roadmaps and measurable outcomes. Operating at the intersection of business strategy and engineering execution across multinational teams.</div>
+          <div class="timeline-tags"><span class="tag">Enterprise SaaS</span><span class="tag">DMS</span><span class="tag lav">Roadmapping</span><span class="tag lav">Stakeholder mgmt</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-date"><span>2023 → 2024</span></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">ThinkTech · Remote, Brazil</div>
+          <div class="timeline-role">Product Manager / PO / Scrum Master</div>
+          <div class="timeline-desc">Simultaneously led three high-velocity projects: Teleport LA (social commerce, $10M Series A), Neurolaudos (clinical SaaS, R$3M angel round secured), and BigDelivery (marketplace scaling, +66% sprint velocity). Each delivered ahead of schedule.</div>
+          <div class="timeline-tags"><span class="tag">Social commerce</span><span class="tag">HealthTech</span><span class="tag">E-commerce</span><span class="tag lav">Agile delivery</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-2">
+        <div class="timeline-date"><span>2020 → 2023</span></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">Testes Moleculares · Bahia, Brazil</div>
+          <div class="timeline-role">Product Manager / UX/UI Lead</div>
+          <div class="timeline-desc">Built a full-cycle healthcare platform from scratch during COVID-19 — lab automation system + patient appointment portal. 100% manual processes automated. $90K annual savings. 10,000 users post-launch. Shipped in 14 months.</div>
+          <div class="timeline-tags"><span class="tag">MedTech</span><span class="tag">Lab automation</span><span class="tag lav">UX/UI lead</span><span class="tag lav">AWS · MongoDB</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date"><span>2020 → 2022</span></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">Vórtx Capital · Remote, Brazil</div>
+          <div class="timeline-role">Product Manager / UX</div>
+          <div class="timeline-desc">Solved a discoverability problem for Brazil's annual tax season. Redesigned the income tax report flow for R$1.7 trillion in assets under custody. 30,000 downloads in 10 days. MVP permanently adopted into the platform.</div>
+          <div class="timeline-tags"><span class="tag">FinTech</span><span class="tag">UX strategy</span><span class="tag lav">MVP delivery</span><span class="tag lav">2-month sprint</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-date"><span>~2010 → 2020</span></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">I-Deal China · China 🇨🇳</div>
+          <div class="timeline-role">Senior Product Manager — Hardware & Digital</div>
+          <div class="timeline-desc">Nearly a decade building and scaling products for global markets from China. Led multinational teams. Developed 1,000+ products for worldwide clients. Created i-dealchina.com and petidealgroup.com. Became the go-to reference for digital and hardware transformation.</div>
+          <div class="timeline-tags"><span class="tag">Hardware products</span><span class="tag">Digital transformation</span><span class="tag lav">Global ops</span><span class="tag lav">1,000+ products</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label reveal">Case studies</div>
+    <h2 class="section-title reveal">Work that <em>moved the needle</em></h2>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-header">
+          <span class="project-num">01</span>
+          <div class="project-cat">FinTech · UX Strategy</div>
+          <div class="project-title">Vórtx Capital Report</div>
+          <div class="project-desc">Redesigned the discoverability of Brazil's investment tax report — no new data, just a better front door. The clearest example of UX clarity as product strategy.</div>
+        </div>
+        <div class="project-metrics">
+          <div class="metric-box"><span class="metric-val">30K</span><span class="metric-lbl">Downloads / 10 days</span></div>
+          <div class="metric-box"><span class="metric-val">2mo</span><span class="metric-lbl">Discovery → MVP</span></div>
+          <div class="metric-box"><span class="metric-val">∞</span><span class="metric-lbl">MVP → core platform</span></div>
+        </div>
+        <div class="project-body">
+          <div class="timeline-tags"><span class="tag lav">PM / UX</span><span class="tag">FinTech</span><span class="tag">Receita Federal</span></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-header">
+          <span class="project-num">02</span>
+          <div class="project-cat">Social Commerce · Startup</div>
+          <div class="project-title">Teleport LA</div>
+          <div class="project-desc">TikTok-style thrifting app. Led distributed delivery (Brazil + USA), managed a full platform pivot mid-fundraise, and shipped at 1-week sprint cadence to close a $10M Series A.</div>
+        </div>
+        <div class="project-metrics">
+          <div class="metric-box"><span class="metric-val">$10M</span><span class="metric-lbl">Series A raised</span></div>
+          <div class="metric-box"><span class="metric-val">35K</span><span class="metric-lbl">Active users</span></div>
+          <div class="metric-box"><span class="metric-val">1wk</span><span class="metric-lbl">Sprint cadence</span></div>
+        </div>
+        <div class="project-body">
+          <div class="timeline-tags"><span class="tag lav">PM / PO / QA</span><span class="tag">Gen Z</span><span class="tag">Pivot mgmt</span></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-header">
+          <span class="project-num">03</span>
+          <div class="project-cat">HealthTech · Clinical SaaS</div>
+          <div class="project-title">Testes Moleculares Platform</div>
+          <div class="project-desc">Full-cycle healthcare platform during COVID-19 — lab automation + patient portal. 100% manual processes eliminated. Shipped in 14 months with $90K annual savings.</div>
+        </div>
+        <div class="project-metrics">
+          <div class="metric-box"><span class="metric-val">100%</span><span class="metric-lbl">Lab automation</span></div>
+          <div class="metric-box"><span class="metric-val">$90K</span><span class="metric-lbl">Yearly savings</span></div>
+          <div class="metric-box"><span class="metric-val">10K</span><span class="metric-lbl">Users acquired</span></div>
+        </div>
+        <div class="project-body">
+          <div class="timeline-tags"><span class="tag lav">PM + UX Lead</span><span class="tag">AWS</span><span class="tag">MongoDB</span></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-header">
+          <span class="project-num">04</span>
+          <div class="project-cat">Clinical SaaS · Investment</div>
+          <div class="project-title">Neurolaudos</div>
+          <div class="project-desc">Clinical report platform for neuropsychologists. Delivered 20% ahead of schedule, unlocking a 2-month pilot phase that gave investors the real-world validation to fund R$3M.</div>
+        </div>
+        <div class="project-metrics">
+          <div class="metric-box"><span class="metric-val">R$3M</span><span class="metric-lbl">Angel investment</span></div>
+          <div class="metric-box"><span class="metric-val">20%</span><span class="metric-lbl">Ahead of schedule</span></div>
+          <div class="metric-box"><span class="metric-val">8mo</span><span class="metric-lbl">Built (not 10)</span></div>
+        </div>
+        <div class="project-body">
+          <div class="timeline-tags"><span class="tag lav">PM / PO</span><span class="tag">LGPD · HIPAA</span><span class="tag">SaaS</span></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-header">
+          <span class="project-num">05</span>
+          <div class="project-cat">E-commerce · Process design</div>
+          <div class="project-title">BigDelivery</div>
+          <div class="project-desc">Brazilian BBQ marketplace. Remodelled delivery processes and installed sprint discipline. One extra person + right process = 66% more output. Stakeholder decisions dropped from 7 days to 2.</div>
+        </div>
+        <div class="project-metrics">
+          <div class="metric-box"><span class="metric-val">+66%</span><span class="metric-lbl">Sprint output</span></div>
+          <div class="metric-box"><span class="metric-val">70%</span><span class="metric-lbl">Faster decisions</span></div>
+          <div class="metric-box"><span class="metric-val">1→25</span><span class="metric-lbl">Vendor growth</span></div>
+        </div>
+        <div class="project-body">
+          <div class="timeline-tags"><span class="tag lav">PO / Scrum Master</span><span class="tag">Marketplace</span><span class="tag">Last-mile</span></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-header">
+          <span class="project-num">06</span>
+          <div class="project-cat">Hardware + Digital · China</div>
+          <div class="project-title">I-Deal China · 1,000+ Products</div>
+          <div class="project-desc">Nearly a decade building hardware and digital products for global markets from China. Created i-dealchina.com and petidealgroup.com. Led multinational teams and digital transformation.</div>
+        </div>
+        <div class="project-metrics">
+          <div class="metric-box"><span class="metric-val">1K+</span><span class="metric-lbl">Products built</span></div>
+          <div class="metric-box"><span class="metric-val">10yr</span><span class="metric-lbl">In China</span></div>
+          <div class="metric-box"><span class="metric-val">🌍</span><span class="metric-lbl">Global clients</span></div>
+        </div>
+        <div class="project-body">
+          <div class="timeline-tags"><span class="tag lav">Senior PM</span><span class="tag">Hardware</span><span class="tag">Digital transform.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label reveal">What I bring</div>
+    <h2 class="section-title reveal">Skills &amp; <em>tools</em></h2>
+    <div class="skills-layout">
+      <div class="reveal">
+        <h3>Core competencies</h3>
+        <div class="skill-bar"><div class="skill-bar-header"><span class="skill-name">Product strategy &amp; roadmapping</span><span class="skill-pct">98%</span></div><div class="skill-track"><div class="skill-fill" style="width:98%"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-header"><span class="skill-name">Agile delivery (Scrum, Kanban)</span><span class="skill-pct">96%</span></div><div class="skill-track"><div class="skill-fill" style="width:96%"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-header"><span class="skill-name">Cross-functional team leadership</span><span class="skill-pct">97%</span></div><div class="skill-track"><div class="skill-fill" style="width:97%"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-header"><span class="skill-name">UX / UI design direction</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-header"><span class="skill-name">Data analysis &amp; KPI frameworks</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-header"><span class="skill-name">Requirements engineering</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" style="width:92%"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-header"><span class="skill-name">Stakeholder management</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" style="width:95%"></div></div></div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <h3>Tools &amp; technologies</h3>
+        <div class="skill-pills">
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill mint">Power BI</span>
+          <span class="skill-pill">Jira / Confluence</span>
+          <span class="skill-pill mint">Google Analytics</span>
+          <span class="skill-pill">Excel / Google Sheets</span>
+          <span class="skill-pill mint">AWS</span>
+          <span class="skill-pill">MongoDB</span>
+          <span class="skill-pill mint">React (basics)</span>
+          <span class="skill-pill">SQL (basics)</span>
+          <span class="skill-pill mint">Git / GitHub</span>
+          <span class="skill-pill">Miro / FigJam</span>
+          <span class="skill-pill mint">Notion</span>
+          <span class="skill-pill">Trello / Asana</span>
+          <span class="skill-pill mint">Postman (API basics)</span>
+          <span class="skill-pill">Hotjar / Mixpanel</span>
+          <span class="skill-pill mint">Python basics</span>
+          <span class="skill-pill">Software architecture</span>
+          <span class="skill-pill mint">AI tools (Cursor, Claude)</span>
+        </div>
+        <h3 style="margin-top:2rem;">Domain expertise</h3>
+        <div class="skill-pills">
+          <span class="skill-pill">FinTech</span>
+          <span class="skill-pill mint">HealthTech / MedTech</span>
+          <span class="skill-pill">E-commerce</span>
+          <span class="skill-pill mint">Social commerce</span>
+          <span class="skill-pill">Enterprise SaaS</span>
+          <span class="skill-pill mint">Hardware products</span>
+          <span class="skill-pill">Clinical systems</span>
+          <span class="skill-pill mint">Last-mile logistics</span>
+          <span class="skill-pill">0→1 products</span>
+          <span class="skill-pill mint">1→n scaling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label reveal">Academic background</div>
+    <h2 class="section-title reveal"><em>Education</em> &amp; learning</h2>
+    <div class="reveal">
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-info">
+          <h3>Bachelor's Degree in Software Engineering</h3>
+          <div class="school">Universidade Católica do Salvador (UCSAL) · Bahia, Brazil</div>
+          <div class="period">2020 – 2024 · Graduated July 2024</div>
+          <div class="edu-gpa">
+            <span class="gpa-badge">GPA 9.14 / 10</span>
+            <span style="font-size:0.82rem;color:var(--text-light);">3,350 hours · Completed</span>
+          </div>
+          <div style="margin-top:1rem;font-size:0.85rem;color:var(--text-mid);line-height:1.7;">
+            Coursework: Software architecture, AI, databases, agile methods, UX, entrepreneurship, business processes, security auditing, mobile development, data structures, compilers, and more. Earned while working full-time on critical healthtech projects during COVID-19.
+          </div>
+        </div>
+      </div>
+      <div class="edu-card" style="margin-top:1rem;">
+        <div class="edu-icon">📊</div>
+        <div class="edu-info">
+          <h3>Full Stack Product Manager</h3>
+          <div class="school">DNC School — Data & Business</div>
+          <div class="period">Professional certification · Brazil</div>
+          <div style="margin-top:0.8rem;font-size:0.85rem;color:var(--text-mid);line-height:1.7;">
+            Covers product strategy, discovery, delivery, agile frameworks, product analytics, business economics, market analysis, pricing strategy, and go-to-market execution. Combines technical PM skills with business fundamentals.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAME -->
+<section id="game">
+  <div class="section-inner">
+    <div class="section-label reveal" style="justify-content:center;">Can you out-PM me?</div>
+    <h2 class="section-title reveal" style="text-align:center;">The Lu Babani <em>Challenge</em></h2>
+    <p class="section-sub reveal" style="text-align:center;margin:0 auto 0;">Think you know product management — and Lu's story? Test yourself. Recruiters who score 5/5 get extra brownie points. 🍪</p>
+    <div class="game-wrapper reveal">
+      <div class="game-top">
+        <h2>The Product PM Quiz</h2>
+        <p>5 questions · mixed PM knowledge + Lu's actual career</p>
+      </div>
+      <div class="game-body">
+        <div class="game-progress" id="gameProgress"></div>
+        <div class="game-question" id="gameQuestion">Loading question...</div>
+        <div class="game-options" id="gameOptions"></div>
+        <div class="game-feedback" id="gameFeedback"></div>
+        <div class="game-score-display" id="gameEnd" style="display:none;">
+          <div class="game-score" id="finalScore"></div>
+          <div class="score-msg" id="scoreMsg"></div>
+          <button class="btn-restart" onclick="startGame()">Play again ↻</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label reveal">Say hello</div>
+    <h2 class="section-title reveal">Let's build something <em>great</em></h2>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p>I'm currently open to senior PM roles — especially in product-led, data-informed teams working on meaningful problems. I thrive in ambiguity, communicate across all levels, and genuinely love the people side of product.</p>
+        <div class="contact-links">
+          <a href="mailto:luobabani@gmail.com" class="contact-link">
+            <div class="contact-link-icon">📧</div>
+            <span>luobabani@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/lubabani/" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💼</div>
+            <span>linkedin.com/in/lubabani</span>
+          </a>
+          <a href="tel:+918977903264" class="contact-link">
+            <div class="contact-link-icon">📱</div>
+            <span>+91 89779 03264 · Hyderabad, India</span>
+          </a>
+          <a href="https://www.i-dealchina.com" target="_blank" class="contact-link">
+            <div class="contact-link-icon">🌏</div>
+            <span>i-dealchina.com</span>
+          </a>
+          <a href="https://www.petidealgroup.com/product_list/" target="_blank" class="contact-link">
+            <div class="contact-link-icon">🐾</div>
+            <span>petidealgroup.com</span>
+          </a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="contact-form">
+          <div class="form-group">
+            <label>Your name</label>
+            <input type="text" placeholder="e.g. Alex from Acme Corp">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" placeholder="Tell me about the role or project..."></textarea>
+          </div>
+          <button class="form-submit" onclick="alert('✨ Thank you! In a real deployment this would send. Reach me directly at luobabani@gmail.com!')">Send message →</button>
+          <p class="form-note">Or just email me directly — I reply fast. 🙃</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built with intention, not just a template ♥ &nbsp;·&nbsp; <strong style="color:rgba(255,255,255,0.5)">Lu Babani</strong> · <a href="https://www.linkedin.com/in/lubabani/" target="_blank">LinkedIn</a> · <a href="mailto:luobabani@gmail.com">Email</a></p>
+</footer>
+
+<script>
+/* ── LOAD PHOTO ── */
+const heroPhoto = document.getElementById('heroPhoto');
+heroPhoto.onerror = function() {};
+heroPhoto.src = 'ChatGPT_Image_May_16__2026__04_43_06_PM.png';
+
+/* ── SCROLL REVEAL ── */
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+revealEls.forEach(el => observer.observe(el));
+
+/* ── SKILL BARS ── */
+const skillObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-fill').forEach(f => f.classList.add('animate'));
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skills-col, .skills-layout').forEach(el => skillObs.observe(el));
+document.querySelector('.skills-layout') && skillObs.observe(document.querySelector('.skills-layout'));
+setTimeout(() => { document.querySelectorAll('.skill-fill').forEach(f => { const parent = f.closest('section'); if (parent && parent.getBoundingClientRect().top < window.innerHeight) f.classList.add('animate'); }); }, 500);
+
+/* ── GAME ── */
+const questions = [
+  {
+    q: "Lu launched a tax report feature at Vórtx. What was the core insight?",
+    opts: ["The data was missing from the platform","It wasn't a data problem — it was discoverability & readability","Users needed better documentation","The Receita Federal changed its format"],
+    correct: 1,
+    feedback: "Exactly! The data existed. Lu gave it a front door — 30,000 downloads in 10 days followed."
+  },
+  {
+    q: "Which PM framework describes turning product insights into prioritised outcomes?",
+    opts: ["RICE scoring","Jobs-to-be-Done + Now/Next/Later","SWOT analysis only","Waterfall planning"],
+    correct: 1,
+    feedback: "Jobs-to-be-Done helps frame user needs, paired with Now/Next/Later for flexible roadmapping."
+  },
+  {
+    q: "How much investment did Teleport LA close — partly thanks to Lu's delivery infrastructure?",
+    opts: ["$1M seed round","$5M Series A","$10M Series A","$25M Series B"],
+    correct: 2,
+    feedback: "A $10M Series A — made possible by 1-week sprint cadence, personal QA ownership, and clear pivot management."
+  },
+  {
+    q: "A startup PM's MVP is delayed. The BEST immediate step is:",
+    opts: ["Add more developers","Scope down to the minimum viable value","Extend the deadline by 2 months","Pause and do more discovery"],
+    correct: 1,
+    feedback: "Scope discipline, not headcount. Lu's Neurolaudos delivered 20% ahead of schedule with tight MVP scoping."
+  },
+  {
+    q: "What is Lu's overall GPA from her Software Engineering degree?",
+    opts: ["7.5 out of 10","8.2 out of 10","9.14 out of 10","10 out of 10"],
+    correct: 2,
+    feedback: "9.14 / 10 at UCSAL — earned while managing full-time healthtech projects during COVID-19. 🌟"
+  }
+];
+
+let current = 0, score = 0, answered = false;
+
+function startGame() {
+  current = 0; score = 0; answered = false;
+  document.getElementById('gameEnd').style.display = 'none';
+  document.getElementById('gameFeedback').textContent = '';
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[current];
+  document.getElementById('gameQuestion').textContent = q.q;
+  const opts = document.getElementById('gameOptions');
+  opts.innerHTML = '';
+  q.opts.forEach((o, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'game-option';
+    btn.textContent = o;
+    btn.onclick = () => answer(i, btn);
+    opts.appendChild(btn);
+  });
+  renderProgress();
+  document.getElementById('gameFeedback').textContent = '';
+}
+
+function renderProgress() {
+  const prog = document.getElementById('gameProgress');
+  prog.innerHTML = '';
+  questions.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'progress-dot' + (i < current ? ' done' : i === current ? ' current' : '');
+    prog.appendChild(d);
+  });
+}
+
+function answer(idx, btn) {
+  if (answered) return;
+  answered = true;
+  const q = questions[current];
+  const opts = document.querySelectorAll('.game-option');
+  opts.forEach((b, i) => {
+    if (i === q.correct) b.classList.add('correct');
+    else if (i === idx && idx !== q.correct) b.classList.add('wrong');
+    b.style.pointerEvents = 'none';
+  });
+  if (idx === q.correct) score++;
+  document.getElementById('gameFeedback').textContent = q.feedback;
+  setTimeout(() => {
+    current++;
+    answered = false;
+    if (current < questions.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  }, 2200);
+}
+
+function showResult() {
+  document.getElementById('gameOptions').innerHTML = '';
+  document.getElementById('gameQuestion').textContent = '';
+  document.getElementById('gameFeedback').textContent = '';
+  renderProgress();
+  document.getElementById('finalScore').textContent = score + ' / ' + questions.length;
+  const msgs = [
+    "Keep learning! Product is a craft. Explore Lu's projects above for inspiration.",
+    "Good start! You know your PM basics. Lu's story has more to teach.",
+    "Nice work! You're product-curious. Lu would enjoy a conversation with you.",
+    "Impressive! You clearly know product — and Lu's story. Let's talk!",
+    "5/5! You're either a PM pro or you read every word of this portfolio. Either way — extra brownie points 🍪 Please reach out!"
+  ];
+  document.getElementById('scoreMsg').innerHTML = msgs[score] + '<br><br>📩 <a href="mailto:luobabani@gmail.com" style="color:var(--lavender-dark)">luobabani@gmail.com</a>';
+  document.getElementById('gameEnd').style.display = 'block';
+}
+
+startGame();
+
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  nav.style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(140,120,200,0.1)' : 'none';
+});
+</script>
+</body>
+</html>
