@@ -1,0 +1,38 @@
+@keyframes pulse-ring {
+  0% { transform: translate(-50%,-50%) scale(0.5); opacity: 0.8; }
+  100% { transform: translate(-50%,-50%) scale(2.2); opacity: 0; }
+}
+
+/* Contact button styles */
+.contact-btn {
+  display: flex; align-items: center; gap: 1.2rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; padding: 1.1rem 1.4rem;
+  text-decoration: none; transition: all 0.2s; cursor: pointer;
+}
+.contact-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--lavender);
+  transform: translateX(4px);
+}
+.contact-btn-icon {
+  font-size: 1.4rem; width: 44px; height: 44px;
+  background: rgba(201,192,232,0.15); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.contact-btn-text {
+  display: flex; flex-direction: column; gap: 0.15rem; flex: 1;
+}
+.contact-btn-label {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4); font-weight: 500;
+}
+.contact-btn-value {
+  font-size: 0.92rem; color: rgba(255,255,255,0.85); font-weight: 400;
+}
+.contact-btn-arrow {
+  font-size: 1.1rem; color: rgba(255,255,255,0.3);
+  transition: color 0.2s; flex-shrink: 0;
+}
+.contact-btn:hover .contact-btn-arrow { color: var(--lavender); }
