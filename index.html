@@ -483,6 +483,66 @@ footer {
 footer a { color: var(--lavender); text-decoration: none; }
 footer a:hover { color: white; }
 
+/* ── CODING CARDS ── */
+.coding-card {
+  background: white; border-radius: 24px; padding: 2rem;
+  border: 1.5px solid var(--lavender-light); text-decoration: none;
+  display: flex; flex-direction: column; gap: 0.6rem;
+  transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden;
+}
+.coding-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--lavender-pale), var(--mint-pale));
+  opacity: 0; transition: opacity 0.3s;
+}
+.coding-card:hover { box-shadow: 0 16px 40px var(--shadow); transform: translateY(-4px); border-color: var(--lavender); }
+.coding-card:hover::before { opacity: 1; }
+.coding-emoji { font-size: 2.2rem; position: relative; z-index: 1; }
+.coding-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--mint-dark); font-weight: 500; position: relative; z-index: 1; }
+.coding-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 400; color: var(--text-dark); position: relative; z-index: 1; }
+.coding-desc { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; flex: 1; position: relative; z-index: 1; }
+.coding-link { font-size: 0.85rem; font-weight: 500; color: var(--lavender-dark); margin-top: 0.5rem; position: relative; z-index: 1; }
+
+/* ── GAME ANIMATIONS ── */
+@keyframes bounceIn {
+  0% { transform: scale(0) translateY(30px); opacity: 0; }
+  60% { transform: scale(1.3) translateY(-10px); opacity: 1; }
+  80% { transform: scale(0.9) translateY(5px); }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-120px) rotate(20deg); opacity: 0; }
+}
+@keyframes firework {
+  0% { transform: scale(0); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+@keyframes celebrate {
+  0%,100% { transform: rotate(-5deg) scale(1); }
+  50% { transform: rotate(5deg) scale(1.1); }
+}
+.game-emoji-float {
+  position: absolute; font-size: 2rem; pointer-events: none;
+  animation: floatUp 1.2s ease-out forwards;
+  z-index: 50;
+}
+.game-correct-anim {
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  animation: bounceIn 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
+  margin: 0.5rem auto;
+}
+.game-correct-face { font-size: 3rem; }
+.game-well-done { font-size: 1rem; font-weight: 500; color: var(--mint-dark); font-family: 'Playfair Display', serif; }
+.fireworks-canvas { position: absolute; inset: 0; pointer-events: none; overflow: hidden; border-radius: 32px; }
+.firework-particle {
+  position: absolute; width: 8px; height: 8px; border-radius: 50%;
+  animation: firework 0.8s ease-out forwards;
+}
+.end-face { font-size: 5rem; display: block; text-align: center; animation: celebrate 0.8s ease-in-out infinite; }
+.end-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; text-align: center; margin: 0.5rem 0; color: var(--text-dark); }
+
 /* ── REVEAL ── */
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -507,6 +567,7 @@ footer a:hover { color: white; }
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#coding">Code</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#game">Quiz</a></li>
   </ul>
@@ -765,6 +826,76 @@ footer a:hover { color: white; }
         </div>
       </div>
 
+      <div class="project-card reveal">
+        <div class="project-header">
+          <span class="project-num">07</span>
+          <div class="project-cat">HealthTech · Data Security · ERP</div>
+          <div class="project-title">Aente Health — Encrypted EHR Platform</div>
+          <div class="project-desc">Designed and governed a fully encrypted Electronic Health Record sharing system across 38 facilities in 6 Brazilian states. Zero compliance violations at rollout. Five simultaneous regulatory frameworks (LGPD · HIPAA · ISO 27001 · ANVISA · CFM/CRM) — all met.</div>
+        </div>
+        <div class="project-metrics">
+          <div class="metric-box"><span class="metric-val">38</span><span class="metric-lbl">Facilities deployed</span></div>
+          <div class="metric-box"><span class="metric-val">5</span><span class="metric-lbl">Frameworks met</span></div>
+          <div class="metric-box"><span class="metric-val">56</span><span class="metric-lbl">Integrations</span></div>
+        </div>
+        <div class="project-body">
+          <div class="timeline-tags"><span class="tag lav">Tech PM · Security</span><span class="tag">EHR / ERP</span><span class="tag">ISO 27001</span><span class="tag">HIPAA</span></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-header">
+          <span class="project-num">08</span>
+          <div class="project-cat">B2B SaaS · Predictive AI · Intelligence</div>
+          <div class="project-title">Global Reviews — Digital Intelligence Platform</div>
+          <div class="project-desc">Transformed a 20+ year benchmarking platform into a predictive intelligence system. Led the UI modernisation and scoped AI-powered predictive scoring features — all while keeping 500+ enterprise brands on a live platform without disruption.</div>
+        </div>
+        <div class="project-metrics">
+          <div class="metric-box"><span class="metric-val">500+</span><span class="metric-lbl">Global brands</span></div>
+          <div class="metric-box"><span class="metric-val">120K+</span><span class="metric-lbl">Journeys tracked</span></div>
+          <div class="metric-box"><span class="metric-val">3</span><span class="metric-lbl">Continents</span></div>
+        </div>
+        <div class="project-body">
+          <div class="timeline-tags"><span class="tag lav">PM / PO / Dev</span><span class="tag">AI features</span><span class="tag">JS + RoR</span><span class="tag">Australia</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CODING PLAYGROUND -->
+<section id="coding" style="background: linear-gradient(135deg, var(--lavender-pale) 0%, var(--mint-pale) 100%);">
+  <div class="section-inner">
+    <div class="section-label reveal">Because PMs who code are dangerous 😄</div>
+    <h2 class="section-title reveal">My <em>coding playground</em></h2>
+    <p class="section-sub reveal">I love building things with my own hands. Here are a few projects I made while learning front-end — proof that product thinking and coding can coexist beautifully.</p>
+    <div class="coding-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem;">
+
+      <a href="https://lubabani.github.io/Bankeasy/" target="_blank" class="coding-card">
+        <div class="coding-emoji">🏦</div>
+        <div class="coding-label">HTML · CSS · JS</div>
+        <div class="coding-title">BankEasy</div>
+        <div class="coding-desc">A clean banking UI concept. My take on making financial interfaces feel human and approachable — because UX and product thinking don't stop at the design file.</div>
+        <div class="coding-link">View live ↗</div>
+      </a>
+
+      <a href="https://lubabani.github.io/Tindog/" target="_blank" class="coding-card">
+        <div class="coding-emoji">🐶</div>
+        <div class="coding-label">Bootstrap · HTML · CSS</div>
+        <div class="coding-title">TinDog</div>
+        <div class="coding-desc">Tinder… but for dogs. A fun landing page built with Bootstrap — my first taste of responsive design and I fell a little bit in love with the craft.</div>
+        <div class="coding-link">View live ↗</div>
+      </a>
+
+      <a href="https://lubabani.github.io/Guess-My-Number/" target="_blank" class="coding-card" style="border-color:var(--blush-deep);">
+        <div class="coding-emoji">🎮</div>
+        <div class="coding-label">Vanilla JS · My first game!</div>
+        <div class="coding-title">Guess My Number</div>
+        <div class="coding-desc">My very first JavaScript game — and I'm proud of it! Pick a number, guess the secret, and see how few tries you need. Every PM should build at least one game. 🙃</div>
+        <div class="coding-link" style="color:var(--blush-deep);">Play now ↗</div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -867,17 +998,21 @@ footer a:hover { color: white; }
     <div class="section-label reveal" style="justify-content:center;">Can you out-PM me?</div>
     <h2 class="section-title reveal" style="text-align:center;">The Lu Babani <em>Challenge</em></h2>
     <p class="section-sub reveal" style="text-align:center;margin:0 auto 0;">Think you know product management — and Lu's story? Test yourself. Recruiters who score 5/5 get extra brownie points. 🍪</p>
-    <div class="game-wrapper reveal">
+    <div class="game-wrapper reveal" style="position:relative;">
+      <div class="fireworks-canvas" id="fireworksCanvas"></div>
       <div class="game-top">
         <h2>The Product PM Quiz</h2>
         <p>5 questions · mixed PM knowledge + Lu's actual career</p>
       </div>
-      <div class="game-body">
+      <div class="game-body" style="position:relative;">
         <div class="game-progress" id="gameProgress"></div>
         <div class="game-question" id="gameQuestion">Loading question...</div>
         <div class="game-options" id="gameOptions"></div>
+        <div id="correctAnim" style="min-height:80px;display:flex;align-items:center;justify-content:center;"></div>
         <div class="game-feedback" id="gameFeedback"></div>
         <div class="game-score-display" id="gameEnd" style="display:none;">
+          <span class="end-face" id="endFace"></span>
+          <div class="end-title" id="endTitle"></div>
           <div class="game-score" id="finalScore"></div>
           <div class="score-msg" id="scoreMsg"></div>
           <button class="btn-restart" onclick="startGame()">Play again ↻</button>
@@ -1005,10 +1140,59 @@ const questions = [
 
 let current = 0, score = 0, answered = false;
 
+function launchFloatingEmojis(container) {
+  const emojis = ['😊','✨','🎉','💜','🌿','⭐'];
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.className = 'game-emoji-float';
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      el.style.left = (20 + Math.random() * 60) + '%';
+      el.style.bottom = '40px';
+      el.style.fontSize = (1.5 + Math.random()) + 'rem';
+      container.appendChild(el);
+      setTimeout(() => el.remove(), 1300);
+    }, i * 150);
+  }
+}
+
+function launchFireworks() {
+  const canvas = document.getElementById('fireworksCanvas');
+  const colors = ['#C9C0E8','#6DCAB0','#F5D8E8','#8B7CC8','#B8E6D8','#E8A0C0','#FFD700'];
+  for (let wave = 0; wave < 4; wave++) {
+    setTimeout(() => {
+      for (let i = 0; i < 12; i++) {
+        const p = document.createElement('div');
+        p.className = 'firework-particle';
+        p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        p.style.left = (10 + Math.random() * 80) + '%';
+        p.style.top = (5 + Math.random() * 60) + '%';
+        p.style.width = p.style.height = (6 + Math.random() * 10) + 'px';
+        p.style.animationDelay = (Math.random() * 0.3) + 's';
+        canvas.appendChild(p);
+        setTimeout(() => p.remove(), 1200);
+      }
+    }, wave * 400);
+  }
+}
+
+function showCorrectAnimation(gameBody) {
+  const animDiv = document.getElementById('correctAnim');
+  animDiv.innerHTML = '';
+  const wrap = document.createElement('div');
+  wrap.className = 'game-correct-anim';
+  wrap.innerHTML = '<div class="game-correct-face">😊</div><div class="game-well-done">Well done!</div>';
+  animDiv.appendChild(wrap);
+  launchFloatingEmojis(gameBody);
+  setTimeout(() => { animDiv.innerHTML = ''; }, 2000);
+}
+
 function startGame() {
   current = 0; score = 0; answered = false;
   document.getElementById('gameEnd').style.display = 'none';
   document.getElementById('gameFeedback').textContent = '';
+  document.getElementById('correctAnim').innerHTML = '';
+  document.getElementById('fireworksCanvas').innerHTML = '';
   renderQuestion();
 }
 
@@ -1026,6 +1210,7 @@ function renderQuestion() {
   });
   renderProgress();
   document.getElementById('gameFeedback').textContent = '';
+  document.getElementById('correctAnim').innerHTML = '';
 }
 
 function renderProgress() {
@@ -1043,38 +1228,52 @@ function answer(idx, btn) {
   answered = true;
   const q = questions[current];
   const opts = document.querySelectorAll('.game-option');
+  const gameBody = document.querySelector('.game-body');
   opts.forEach((b, i) => {
     if (i === q.correct) b.classList.add('correct');
     else if (i === idx && idx !== q.correct) b.classList.add('wrong');
     b.style.pointerEvents = 'none';
   });
-  if (idx === q.correct) score++;
+  const isCorrect = idx === q.correct;
+  if (isCorrect) { score++; showCorrectAnimation(gameBody); }
   document.getElementById('gameFeedback').textContent = q.feedback;
   setTimeout(() => {
     current++;
     answered = false;
-    if (current < questions.length) {
-      renderQuestion();
-    } else {
-      showResult();
-    }
-  }, 2200);
+    if (current < questions.length) { renderQuestion(); }
+    else { showResult(); }
+  }, 2300);
 }
 
 function showResult() {
   document.getElementById('gameOptions').innerHTML = '';
   document.getElementById('gameQuestion').textContent = '';
   document.getElementById('gameFeedback').textContent = '';
+  document.getElementById('correctAnim').innerHTML = '';
   renderProgress();
   document.getElementById('finalScore').textContent = score + ' / ' + questions.length;
-  const msgs = [
-    "Keep learning! Product is a craft. Explore Lu's projects above for inspiration.",
-    "Good start! You know your PM basics. Lu's story has more to teach.",
-    "Nice work! You're product-curious. Lu would enjoy a conversation with you.",
-    "Impressive! You clearly know product — and Lu's story. Let's talk!",
-    "5/5! You're either a PM pro or you read every word of this portfolio. Either way — extra brownie points 🍪 Please reach out!"
-  ];
-  document.getElementById('scoreMsg').innerHTML = msgs[score] + '<br><br>📩 <a href="mailto:luobabani@gmail.com" style="color:var(--lavender-dark)">luobabani@gmail.com</a>';
+
+  const endFace = document.getElementById('endFace');
+  const endTitle = document.getElementById('endTitle');
+  const scoreMsg = document.getElementById('scoreMsg');
+
+  if (score === 5) {
+    endFace.textContent = '🎉';
+    endTitle.textContent = 'Perfect score! You are awesome!';
+    scoreMsg.innerHTML = 'A flawless 5/5 — you clearly read every word of this portfolio AND you know your product management. Extra brownie points incoming 🍪<br><br>📩 <a href="mailto:luobabani@gmail.com" style="color:var(--lavender-dark)">Let\'s talk — luobabani@gmail.com</a>';
+    launchFireworks();
+    setTimeout(launchFireworks, 800);
+    setTimeout(launchFireworks, 1600);
+  } else if (score >= 3) {
+    endFace.textContent = '😄';
+    endTitle.textContent = 'You made it — you are good at it!';
+    scoreMsg.innerHTML = score + '/5 — solid work! You know your PM craft and a good chunk of Lu\'s story. That\'s a conversation worth having.<br><br>📩 <a href="mailto:luobabani@gmail.com" style="color:var(--lavender-dark)">luobabani@gmail.com</a>';
+  } else {
+    endFace.textContent = '🙃';
+    endTitle.textContent = 'Try again — you will get there!';
+    scoreMsg.innerHTML = score + '/5 this time. The answers are in this portfolio — have another read and come back! The quiz will be waiting. 😄<br><br>📩 <a href="mailto:luobabani@gmail.com" style="color:var(--lavender-dark)">luobabani@gmail.com</a>';
+  }
+
   document.getElementById('gameEnd').style.display = 'block';
 }
 
